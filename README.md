@@ -1,2 +1,4 @@
-# interactive_web
-An example for interactive website
+# hyosunggroup_draft
+- 효성그룹 (type B) 시안 작업
+- 작업기간 : 2022.07.01 ~ 2022.07.07 (5 days)
+- 기획 1명, 디자이너 1명, 퍼블리셔 1명 (소속: 비닷크리에이티브)
