@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport"
+	      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>효성그룹</title>
+	<script src="common/jquery-latest.min.js"></script>
+	<script src="common/jquery.easing.min.js"></script>
+	<script src="common/swiper/swiper-bundle.min.js"></script>
+	<script src="common/aos/aos.js"></script>
+	<script src="common/jquery.counterup.min.js"></script>
+	<script src="common/waypoints.min.js"></script>
+	<link rel="stylesheet" href="common/aos/aos.css">
+	<link rel="stylesheet" href="common/swiper/swiper-bundle.min.css">
+	<link rel="stylesheet" href="common/common.css">
+	<!-- <link rel="shortcut icon" href="favicon.ico" type="image/x-icon"> -->
+	<!-- <link rel="icon" href="favicon.ico" type="image/x-icon"> -->
+</head>
+<body>
+<div id="wrap" class="wrap">
+	<!-- HEADER -->
+	<header id="header" class="header header--sub">
+		<div class="header__wrap">
+			<h1 class="logo">
+                <a href="./index.html">
+                    <img src="./imgs/logo.png">
+                </a>
+			</h1>
+			<button id="btnMenu" type="button" class="btn-menu">
+				<span class="btn-menu__line btn-menu__line--top"></span>
+				<span class="btn-menu__line btn-menu__line--bottom"></span>
+			</button>
+		</div>
+	</header>
+	<!-- // -->
+    <!-- GNB -->
+    <nav id="gnb" class="gnb">
+        <div class="gnb__inner">
+            <div class="gnb__box">
+                <ul class="gnb__list">
+                    <li>
+                        <span class="gnb__num">01</span>
+                        <a href="./sub01.html" class="gnb__link">그룹소개</a>
+                    </li>
+                    <li>
+                        <span class="gnb__num">02</span>
+                        <a href="#" class="gnb__link">기업지배구조</a>
+                    </li>
+                    <li>
+                        <span class="gnb__num">03</span>
+                        <a href="#" class="gnb__link">지속가능경영</a>
+                    </li>
+                    <li>
+                        <span class="gnb__num">04</span>
+                        <a href="#" class="gnb__link">투자정보</a>
+                    </li>
+                </ul>
+                <ul class="lnb">
+                    <li>
+                        <a href="#" class="lnb__link">그룹개요</a>
+                    </li>
+                    <li>
+                        <a href="#" class="lnb__link">CEO인사말</a>
+                    </li>
+                    <li>
+                        <a href="./sub03.html" class="lnb__link">연혁</a>
+                    </li>
+                    <li>
+                        <a href="#" class="lnb__link">비전 및 ESG미션</a>
+                    </li>
+                    <li>
+                        <a href="#" class="lnb__link">CI 소개</a>
+                    </li>
+                    <li>
+                        <a href="./sub01.html" class="lnb__link">계열사 소개</a>
+                    </li>
+                    <li>
+                        <a href="#" class="lnb__link lnb__link--dropdown">뉴스룸</a>
+                    </li>
+                    <li>
+                        <a href="#" class="lnb__link lnb__link--dropdown">인재채용</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="gnb__image">
+                <img src="./imgs/9.jpg">
+            </div>
+        </div>
+    </nav>
+    <!-- // -->
+	<!-- SUB-INTRO -->
+    <div class="sub-intro">
+        <img src="./imgs/sub/1.jpg">
+    </div>
+	<!-- // -->
+	<!-- SUB-VISUAL -->
+    <div class="sub-visual" style="margin-top:30px">
+        <img src="./imgs/sub/2.jpg">
+    </div>
+    <!-- // -->
+    <section class="sub-contents">
+        <div class="sub-contents__header">
+            <div class="sub-tab">
+                <a href="#fiber" class="active">섬유·무역부문</a>
+                <a href="#building">중공업·건설부문</a>
+                <a href="#">산업자재부문</a>
+                <a href="#">화학부문</a>
+                <a href="#">정보통신부문</a>
+                <a href="#">기타</a>
+            </div>
+        </div>
+        <div id="fiber" class="tab-content active">
+            <div class="sub-contents__body">
+                <img src="./imgs/sub/temp_sub01.jpg">
+            </div>
+        </div>
+        <div id="building" class="tab-content">
+            <div class="sub-contents__body">
+                <img src="./imgs/sub/temp_sub02.jpg">
+            </div>
+        </div>
+
+        <button type="button" id="btnTop" class="button-top">
+            <span class="top-circle"></span>
+            <i class="icon icon-arrow"></i>
+        </button>
+    </section>
+	<!-- FOOTER -->
+	<footer class="footer">
+		<img src="./imgs/footer.jpg">
+	</footer>
+	<!-- // -->
+</div>
+<script>
+    $(function() {
+        // tab
+        $.fn.tab = function (e) {
+            return this.each(function () {
+                var target = $(this).attr('href');
+                $(this).addClass('active').siblings().removeClass('active');
+                $(target).addClass('active').siblings().removeClass('active');
+            })
+        }
+        $('.sub-tab a').click(function (e) {
+            e.preventDefault();
+            var url = $(this).attr('href');
+            
+            history.pushState(null, null, url)
+                $(this).tab('show');
+        });
+        $('.sub-tab a:eq(0)').tab(); // Default Tab
+
+        var hash = location.hash;
+        if (hash) {
+            $('.sub-tab a[href=' + hash + ']').tab();
+        }
+    });
+</script>
+<script src="common/common.js"></script>
+</body>
+</html>
